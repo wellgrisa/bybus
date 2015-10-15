@@ -5,7 +5,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bybus", "bybus.csproj", "{2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bybus.Droid", "Droid\bybus.Droid.csproj", "{441BE683-FE9E-4E61-9C58-7E727065F3BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bybus.UITests", "UITests\bybus.UITests.csproj", "{E6F646FC-09ED-4530-9C60-F87111D92EC6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bybus.Services", "bybus.Services\bybus.Services.csproj", "{3619CDF1-8A97-4A62-8A15-BAB6864C1FB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bybus.Models", "bybus.Models\bybus.Models.csproj", "{F68975C0-6533-4AC7-BBE4-27F2C9104875}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,13 +19,17 @@ Global
 		{230D5310-0001-435E-AFB3-9DBD3DD35E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{230D5310-0001-435E-AFB3-9DBD3DD35E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{230D5310-0001-435E-AFB3-9DBD3DD35E04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3619CDF1-8A97-4A62-8A15-BAB6864C1FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3619CDF1-8A97-4A62-8A15-BAB6864C1FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3619CDF1-8A97-4A62-8A15-BAB6864C1FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3619CDF1-8A97-4A62-8A15-BAB6864C1FB7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{441BE683-FE9E-4E61-9C58-7E727065F3BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{441BE683-FE9E-4E61-9C58-7E727065F3BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{441BE683-FE9E-4E61-9C58-7E727065F3BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{441BE683-FE9E-4E61-9C58-7E727065F3BF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E6F646FC-09ED-4530-9C60-F87111D92EC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E6F646FC-09ED-4530-9C60-F87111D92EC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E6F646FC-09ED-4530-9C60-F87111D92EC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E6F646FC-09ED-4530-9C60-F87111D92EC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F68975C0-6533-4AC7-BBE4-27F2C9104875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F68975C0-6533-4AC7-BBE4-27F2C9104875}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F68975C0-6533-4AC7-BBE4-27F2C9104875}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F68975C0-6533-4AC7-BBE4-27F2C9104875}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

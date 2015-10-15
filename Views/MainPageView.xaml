@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="bybus.MainPageView">
+	<ContentPage.Content>
+		<AbsoluteLayout>
+			<RelativeLayout x:Name="RootLayout" >	
+					<StackLayout
+				    	RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView, ElementName=RootLayout, Property=Width, Factor=1}"
+						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=RootLayout, Property=Height, Factor=1}"	>
+
+							<ListView x:Name="myListView" ItemsSource="{Binding Routes}" RowHeight="75">
+							    <ListView.ItemTemplate>
+							      <DataTemplate>
+							      	<ViewCell>
+
+							      		<StackLayout Orientation="Horizontal" BackgroundColor="White" Spacing="0">							      										      		
+
+											<RelativeLayout BackgroundColor="#BABABA">
+												<StackLayout BackgroundColor="White" Padding="0" Spacing="0"
+													RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=0}"
+													RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Constant=0}">
+
+													<StackLayout Orientation="Horizontal" Spacing="0">														
+														<Label Text="{Binding LongName}" HorizontalOptions="Start" FontSize="12" TextColor="Black" FontAttributes="Italic, Bold" />
+													</StackLayout>
+
+													<StackLayout Orientation="Vertical" Spacing="0">														
+														<Button Text="Detalhes" Command="{Binding BindingContext.GoToDetailsCommand, Source={x:Reference RootLayout}}" CommandParameter="{Binding .}"/>
+													</StackLayout>
+
+												</StackLayout>
+											</RelativeLayout>
+
+							      		</StackLayout>
+
+							      	</ViewCell>
+							      </DataTemplate>
+							    </ListView.ItemTemplate>
+							  </ListView>
+							  <!--<Button Text="Add New Activity" Command="{Binding AddNewActivityCommand}" />-->
+						</StackLayout>
+
+						<ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}"  Color="#3498DB"
+						    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=RootLayout, Property=Width, Factor=0.45}"
+							RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=RootLayout, Property=Height, Factor=0.2}"
+						/>
+					</RelativeLayout>						
+		</AbsoluteLayout>
+	</ContentPage.Content>
+</ContentPage>

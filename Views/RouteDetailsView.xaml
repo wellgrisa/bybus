@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="bybus.RouteDetailsView">
+	<TabbedPage.Children>
+		<ContentPage Title="Detalhes da rota">		
+			<StackLayout>
+				<Button Clicked="OnBackClicked" Text="Voltar"/>
+				<RelativeLayout BackgroundColor="#BABABA">
+					<StackLayout BackgroundColor="White" Padding="0" Spacing="0"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=0}"
+						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Constant=0}">
+
+						<StackLayout Orientation="Vertical" Spacing="0">
+							<Label Text="{Binding Route.Id}" />
+						</StackLayout>
+
+						<StackLayout Orientation="Horizontal" Spacing="0">														
+							<Label Text="{Binding Route.ShortName}" HorizontalOptions="Start" FontSize="12" TextColor="Black" FontAttributes="Italic, Bold" />
+						</StackLayout>
+
+						<StackLayout Orientation="Horizontal" Spacing="0">														
+							<Label Text="{Binding Route.LongName}" HorizontalOptions="Start" FontSize="12" TextColor="Black" FontAttributes="Italic, Bold" />
+						</StackLayout>
+
+						<StackLayout Orientation="Horizontal" Spacing="0">														
+							<Label Text="{Binding Route.AgencyId}" HorizontalOptions="Start" FontSize="12" TextColor="Black" FontAttributes="Italic, Bold" />
+						</StackLayout>
+
+					</StackLayout>
+
+				</RelativeLayout>
+
+	  		</StackLayout>
+		</ContentPage>
+		<ContentPage Title="Paradas">
+			<StackLayout>
+
+				<Button Clicked="OnBackClicked" Text="Voltar"/>
+
+				<ListView ItemsSource="{Binding Stops}" RowHeight="75">
+				    <ListView.ItemTemplate>
+				      <DataTemplate>
+				      	<ViewCell>
+
+				      		<StackLayout Orientation="Horizontal" BackgroundColor="White" Spacing="0">							      										      		
+
+								<RelativeLayout BackgroundColor="#BABABA">
+									<StackLayout BackgroundColor="White" Padding="0" Spacing="0"
+										RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=0}"
+										RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Constant=0}">
+
+										<StackLayout Orientation="Horizontal" Spacing="0">														
+											<Label Text="{Binding Sequence}" HorizontalOptions="Start" FontSize="12" TextColor="Black" FontAttributes="Italic, Bold" />
+										</StackLayout>
+
+										<StackLayout Orientation="Horizontal" Spacing="0">														
+											<Label Text="{Binding Name}" HorizontalOptions="Start" FontSize="12" TextColor="Black" FontAttributes="Italic, Bold" />
+										</StackLayout>
+
+									</StackLayout>
+								</RelativeLayout>
+
+				      		</StackLayout>
+
+				      	</ViewCell>
+				      </DataTemplate>
+				    </ListView.ItemTemplate>
+				  </ListView>
+				</StackLayout>
+		</ContentPage>
+		<ContentPage Title="Saídas">
+			<StackLayout>
+
+				<Button Clicked="OnBackClicked" Text="Voltar"/>
+
+				<ListView ItemsSource="{Binding Departures}" RowHeight="75">
+				    <ListView.ItemTemplate>
+				      <DataTemplate>
+				      	<ViewCell>
+
+				      		<StackLayout Orientation="Horizontal" BackgroundColor="White" Spacing="0">							      										      		
+
+								<RelativeLayout BackgroundColor="#BABABA">
+									<StackLayout BackgroundColor="White" Padding="0" Spacing="0"
+										RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=0}"
+										RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Constant=0}">
+
+										<StackLayout Orientation="Horizontal" Spacing="0">														
+											<Label Text="{Binding Calendar}" HorizontalOptions="Start" FontSize="12" TextColor="Black" FontAttributes="Italic, Bold" />
+										</StackLayout>
+
+										<StackLayout Orientation="Horizontal" Spacing="0">														
+											<Label Text="{Binding Time}" HorizontalOptions="Start" FontSize="12" TextColor="Black" FontAttributes="Italic, Bold" />
+										</StackLayout>
+
+									</StackLayout>
+								</RelativeLayout>
+
+				      		</StackLayout>
+
+				      	</ViewCell>
+				      </DataTemplate>
+				    </ListView.ItemTemplate>
+				  </ListView>
+				</StackLayout>
+		</ContentPage>
+	</TabbedPage.Children>
+</TabbedPage>
