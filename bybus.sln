@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bybus.Services", "bybus.Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bybus.Models", "bybus.Models\bybus.Models.csproj", "{F68975C0-6533-4AC7-BBE4-27F2C9104875}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bybus.Testing", "bybus.Testing\bybus.Testing.csproj", "{3BFE9B64-DA74-4538-8373-CA6763DEAB20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{3619CDF1-8A97-4A62-8A15-BAB6864C1FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3619CDF1-8A97-4A62-8A15-BAB6864C1FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3619CDF1-8A97-4A62-8A15-BAB6864C1FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BFE9B64-DA74-4538-8373-CA6763DEAB20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BFE9B64-DA74-4538-8373-CA6763DEAB20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BFE9B64-DA74-4538-8373-CA6763DEAB20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BFE9B64-DA74-4538-8373-CA6763DEAB20}.Release|Any CPU.Build.0 = Release|Any CPU
 		{441BE683-FE9E-4E61-9C58-7E727065F3BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{441BE683-FE9E-4E61-9C58-7E727065F3BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{441BE683-FE9E-4E61-9C58-7E727065F3BF}.Release|Any CPU.ActiveCfg = Release|Any CPU

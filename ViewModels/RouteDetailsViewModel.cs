@@ -13,9 +13,11 @@ namespace bybus.ViewModels
 	[ImplementPropertyChanged]
 	public class RouteDetailsViewModel : BaseViewModel
 	{
-		private readonly RouteRepository _routeRepository;
+		private readonly IRouteRepository _routeRepository;
 
 		public bool IsLoading { get; set; }
+
+		public string Title { get { return Route.ToString(); } }
 
 		public Route Route { get; set; }
 
@@ -25,7 +27,7 @@ namespace bybus.ViewModels
 
 		public ObservableCollection<Departure> WeekendDepartures { get; set; }
 
-		public RouteDetailsViewModel (RouteRepository routeRepository, Route route)
+		public RouteDetailsViewModel (IRouteRepository routeRepository, Route route)
 		{
 			_routeRepository = routeRepository;
 
