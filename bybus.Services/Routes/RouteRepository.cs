@@ -2,18 +2,52 @@
 using bybus.Models;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net.Http;
 
 namespace bybus.Services
 {
-	public class RouteRepository : RestBaseRepository
+	public interface IRouteRepository
 	{
-		private const string FindRoutesByStopName = "findRoutesByStopName/run";
-		private const string FindStopsByRouteId = "findStopsByRouteId/run";
-		private const string FindDeparturesByRouteId = "findDeparturesByRouteId/run";
+		Task<IList<Route>> SearchByStopName (string search);
 
-		public RouteRepository (string url)
-			: base(url)
+		Task<IList<Stop>> SearchStopsByRouteId (int routeId);
+
+		Task<IList<Departure>> SearchDeparturesByRouteId (int routeId);
+	}
+
+	public class RouteRepository : RestBaseRepository, IRouteRepository
+	{
+		public const string FindRoutesByStopName = "findRoutesByStopName/run";
+		public const string FindStopsByRouteId = "findStopsByRouteId/run";
+		public const string FindDeparturesByRouteId = "findDeparturesByRouteId/run";
+
+		protected override string ServiceBaseUrl 
 		{
+			get 
+			{
+				return "https://api.appglu.com/v1/queries/{0}";
+			}
+		}
+
+		public RouteRepository ()			
+		{
+			_client = new HttpClient ();
+
+			Initialize ();
+		}
+
+		public RouteRepository (HttpClient client)			
+		{
+			_client = client;
+
+			Initialize ();
+		}
+
+		private void Initialize()
+		{
+			Authenticate();
+
+			SetHeaders();
 		}
 
 		public Task<IList<Route>> SearchByStopName(string search)

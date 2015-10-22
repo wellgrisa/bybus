@@ -8,41 +8,30 @@
 					<StackLayout BackgroundColor="White" Padding="0" Spacing="0"
 						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=0}"
 						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Constant=0}">
-
 						<StackLayout Orientation="Vertical" Spacing="0">
 							<Label Text="{Binding Route.Id}" />
 						</StackLayout>
-
 						<StackLayout Orientation="Horizontal" Spacing="0">														
 							<Label Text="{Binding Route.ShortName}" HorizontalOptions="Start" FontSize="12" TextColor="Black" FontAttributes="Italic, Bold" />
 						</StackLayout>
-
 						<StackLayout Orientation="Horizontal" Spacing="0">														
 							<Label Text="{Binding Route.LongName}" HorizontalOptions="Start" FontSize="12" TextColor="Black" FontAttributes="Italic, Bold" />
 						</StackLayout>
-
 						<StackLayout Orientation="Horizontal" Spacing="0">														
 							<Label Text="{Binding Route.AgencyId}" HorizontalOptions="Start" FontSize="12" TextColor="Black" FontAttributes="Italic, Bold" />
 						</StackLayout>
-
 					</StackLayout>
-
 				</RelativeLayout>
-
 	  		</StackLayout>
 		</ContentPage>
 		<ContentPage Title="Paradas">
 			<StackLayout>
-
 				<Button Clicked="OnBackClicked" Text="Voltar"/>
-
 				<ListView ItemsSource="{Binding Stops}" RowHeight="75">
 				    <ListView.ItemTemplate>
 				      <DataTemplate>
 				      	<ViewCell>
-
 				      		<StackLayout Orientation="Horizontal" BackgroundColor="White" Spacing="0">							      										      		
-
 								<RelativeLayout BackgroundColor="#BABABA">
 									<StackLayout BackgroundColor="White" Padding="0" Spacing="0"
 										RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=0}"
@@ -58,50 +47,77 @@
 
 									</StackLayout>
 								</RelativeLayout>
-
 				      		</StackLayout>
-
 				      	</ViewCell>
 				      </DataTemplate>
 				    </ListView.ItemTemplate>
 				  </ListView>
 				</StackLayout>
 		</ContentPage>
-		<ContentPage Title="Saídas">
-			<StackLayout>
+		<CarouselPage Title="Saídas">
+			<ContentPage>
+				<StackLayout>
+					<Label>Deslize para a direita para o fim-de-semana</Label>
+					<Label>Durante a semana</Label>
+					<ListView ItemsSource="{Binding WeekdayDepartures}" RowHeight="75">
+					    <ListView.ItemTemplate>
+					      <DataTemplate>
+					      	<ViewCell>
+					      		<StackLayout Orientation="Horizontal" BackgroundColor="White" Spacing="0">							      										      		
 
-				<Button Clicked="OnBackClicked" Text="Voltar"/>
+									<RelativeLayout BackgroundColor="#BABABA">
+										<StackLayout BackgroundColor="White" Padding="0" Spacing="0"
+											RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=0}"
+											RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Constant=0}">
 
-				<ListView ItemsSource="{Binding Departures}" RowHeight="75">
-				    <ListView.ItemTemplate>
-				      <DataTemplate>
-				      	<ViewCell>
+											<StackLayout Orientation="Horizontal" Spacing="0">														
+												<Label Text="{Binding DayDescription}" HorizontalOptions="Start" FontSize="12" TextColor="Black" FontAttributes="Italic, Bold" />
+											</StackLayout>
 
-				      		<StackLayout Orientation="Horizontal" BackgroundColor="White" Spacing="0">							      										      		
+											<StackLayout Orientation="Horizontal" Spacing="0">														
+												<Label Text="{Binding Time}" HorizontalOptions="Start" FontSize="12" TextColor="Black" FontAttributes="Italic, Bold" />
+											</StackLayout>
 
-								<RelativeLayout BackgroundColor="#BABABA">
-									<StackLayout BackgroundColor="White" Padding="0" Spacing="0"
-										RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=0}"
-										RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Constant=0}">
-
-										<StackLayout Orientation="Horizontal" Spacing="0">														
-											<Label Text="{Binding Calendar}" HorizontalOptions="Start" FontSize="12" TextColor="Black" FontAttributes="Italic, Bold" />
 										</StackLayout>
-
-										<StackLayout Orientation="Horizontal" Spacing="0">														
-											<Label Text="{Binding Time}" HorizontalOptions="Start" FontSize="12" TextColor="Black" FontAttributes="Italic, Bold" />
-										</StackLayout>
-
-									</StackLayout>
-								</RelativeLayout>
-
-				      		</StackLayout>
-
-				      	</ViewCell>
-				      </DataTemplate>
-				    </ListView.ItemTemplate>
-				  </ListView>
+									</RelativeLayout>
+					      		</StackLayout>
+					      	</ViewCell>
+					      </DataTemplate>
+					    </ListView.ItemTemplate>
+					  </ListView>
 				</StackLayout>
-		</ContentPage>
+			</ContentPage>
+			<ContentPage>
+				<StackLayout>
+					<Label>Deslize para a esquerda para dias da semana</Label>
+					<Label>Fim-de-semana</Label>
+					<ListView ItemsSource="{Binding WeekendDepartures}" RowHeight="75">
+					    <ListView.ItemTemplate>
+					      <DataTemplate>
+					      	<ViewCell>
+					      		<StackLayout Orientation="Horizontal" BackgroundColor="White" Spacing="0">
+									<RelativeLayout BackgroundColor="#BABABA">
+										<StackLayout BackgroundColor="White" Padding="0" Spacing="0"
+											RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=0}"
+											RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Constant=0}">
+
+											<StackLayout Orientation="Horizontal" Spacing="0">														
+												<Label Text="{Binding DayDescription}" HorizontalOptions="Start" FontSize="12" TextColor="Black" FontAttributes="Italic, Bold" />
+											</StackLayout>
+
+											<StackLayout Orientation="Horizontal" Spacing="0">														
+												<Label Text="{Binding Time}" HorizontalOptions="Start" FontSize="12" TextColor="Black" FontAttributes="Italic, Bold" />
+											</StackLayout>
+
+										</StackLayout>
+									</RelativeLayout>
+					      		</StackLayout>
+					      	</ViewCell>
+					      </DataTemplate>
+					    </ListView.ItemTemplate>
+					  </ListView>
+				</StackLayout>
+			</ContentPage>
+		</CarouselPage>
 	</TabbedPage.Children>
 </TabbedPage>

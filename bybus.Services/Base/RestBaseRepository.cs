@@ -12,32 +12,17 @@ namespace bybus.Services
 {
 	public abstract class RestBaseRepository
 	{
-		private HttpClient _client;
+		protected HttpClient _client;
 
-		public string ServiceBaseUrl 
-		{
-			get;
-			set;
-		}
+		protected abstract string ServiceBaseUrl { get; }
 
-		public RestBaseRepository (string url)
-		{
-			ServiceBaseUrl = url;
-
-			_client = new HttpClient();
-
-			Authenticate ();
-
-			SetHeaders();
-		}
-
-		private void Authenticate(){
+		protected virtual void Authenticate(){
 
 			_client.DefaultRequestHeaders.Authorization = 
 				new AuthenticationHeaderValue ("Basic", Convert.ToBase64String (new System.Text.UTF8Encoding().GetBytes (String.Format ("{0}:{1}", "WKD4N7YMA1uiM8V", "DtdTtzMLQlA0hk2C1Yi5pLyVIlAQ68"))));
 		}	
 
-		private void SetHeaders ()
+		protected virtual void SetHeaders ()
 		{
 			_client.DefaultRequestHeaders.Add ("X-AppGlu-Environment", "staging");
 			_client.DefaultRequestHeaders.Accept.Add (new MediaTypeWithQualityHeaderValue ("application/json"));

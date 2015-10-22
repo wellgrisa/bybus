@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using bybus.Models;
 using Xamarin.Forms;
 using Views.bybus;
@@ -20,7 +21,9 @@ namespace bybus.ViewModels
 
 		public ObservableCollection<Stop> Stops { get; set; }
 
-		public ObservableCollection<Departure> Departures { get; set; }
+		public ObservableCollection<Departure> WeekdayDepartures { get; set; }
+
+		public ObservableCollection<Departure> WeekendDepartures { get; set; }
 
 		public RouteDetailsViewModel (RouteRepository routeRepository, Route route)
 		{
@@ -50,7 +53,13 @@ namespace bybus.ViewModels
 
 			var result = await _routeRepository.SearchDeparturesByRouteId(Route.Id);
 
-			Departures = new ObservableCollection<Departure> (result);
+			var departures = new ObservableCollection<Departure> (result);
+
+			WeekdayDepartures = new ObservableCollection<Departure>(departures
+				.Where(x => x.Calendar == Departure.Weekday));
+
+			WeekendDepartures = new ObservableCollection<Departure>(departures
+				.Where(x => x.Calendar != Departure.Weekday));
 
 			IsLoading = false;
 		}

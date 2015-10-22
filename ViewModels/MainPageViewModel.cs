@@ -21,17 +21,19 @@ namespace Views.bybus
 
 		public Command GoToDetailsCommand { get; set; }
 
+		public Command SearchCommand { get; set; }
+
 		public bool IsLoading { get; set; }
 
 		public string SearchQuery { get; set; }
 
 		public MainPageViewModel()
 		{
-			_routeRepository = new RouteRepository ("https://api.appglu.com/v1/queries/{0}");
-
-			SearchQuery = "lauro linhares";
+			_routeRepository = new RouteRepository ();
 
 			GoToDetailsCommand = new Command(GoToDetails);
+
+			SearchCommand = new Command(LoadRoutes);
 
 			LoadRoutes();
 		}

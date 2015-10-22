@@ -6,7 +6,8 @@
 					<StackLayout
 				    	RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView, ElementName=RootLayout, Property=Width, Factor=1}"
 						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=RootLayout, Property=Height, Factor=1}"	>
-
+							<SearchBar Placeholder="Digite o nome da rua" Text="{Binding SearchQuery}" SearchCommand="{Binding SearchCommand}"/>
+							<Button Text="Search" Command="{Binding SearchCommand}"/>
 							<ListView x:Name="myListView" ItemsSource="{Binding Routes}" RowHeight="75">
 							    <ListView.ItemTemplate>
 							      <DataTemplate>
@@ -36,12 +37,11 @@
 							      </DataTemplate>
 							    </ListView.ItemTemplate>
 							  </ListView>
-							  <!--<Button Text="Add New Activity" Command="{Binding AddNewActivityCommand}" />-->
 						</StackLayout>
 
 						<ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}"  Color="#3498DB"
-						    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=RootLayout, Property=Width, Factor=0.45}"
-							RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=RootLayout, Property=Height, Factor=0.2}"
+						    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=RootLayout, Property=Width, Factor=0.85}"
+							RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=RootLayout, Property=Height, Factor=0}"
 						/>
 					</RelativeLayout>						
 		</AbsoluteLayout>
